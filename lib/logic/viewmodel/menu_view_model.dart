@@ -7,6 +7,7 @@ class MenuViewModel {
 
   MenuViewModel({this.menuItems});
 
+  ///数据源
   getMenuItems() {
     return menuItems = <Menu>[
       Menu(

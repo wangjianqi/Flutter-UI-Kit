@@ -7,6 +7,7 @@ import 'package:flutter_uikit/services/abstract/i_otp_service.dart';
 import 'package:flutter_uikit/services/network_service_response.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
+///实现方法
 class MockOTPService implements IOTPService {
   @override
   Future<NetworkServiceResponse<CreateOTPResponse>> createOTP(

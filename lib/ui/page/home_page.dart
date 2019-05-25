@@ -114,6 +114,7 @@ class HomePage extends StatelessWidget {
         child: Scaffold(key: _scaffoldState, body: bodySliverList()),
       );
 
+  ///
   Widget bodySliverList() {
     MenuBloc menuBloc = MenuBloc();
     return StreamBuilder<List<Menu>>(
@@ -130,6 +131,7 @@ class HomePage extends StatelessWidget {
         });
   }
 
+  ///ink
   Widget header() => Ink(
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: UIData.kitGradients2)),
@@ -173,6 +175,7 @@ class HomePage extends StatelessWidget {
                 Expanded(
                   child: ListView.builder(
                     shrinkWrap: false,
+                    ///
                     itemCount: menu.items.length,
                     itemBuilder: (context, i) => Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -221,7 +224,9 @@ class HomePage extends StatelessWidget {
             SizedBox(
               width: 20.0,
             ),
+            ///fittedBox
             FittedBox(
+              ///iOS按钮
               child: CupertinoButton(
                 onPressed: () => _showModalBottomSheet(context, menu),
                 borderRadius: BorderRadius.circular(50.0),
@@ -251,6 +256,7 @@ class HomePage extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: <Widget>[
+            ///背景图
             menuImage(menu),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -288,6 +294,7 @@ class HomePage extends StatelessWidget {
   Widget homeBodyIOS(BuildContext context) {
     MenuBloc menuBloc = MenuBloc();
     return StreamBuilder<List<Menu>>(
+      ///数据
         stream: menuBloc.menuItems,
         initialData: List(),
         builder: (context, snapshot) {
@@ -299,6 +306,7 @@ class HomePage extends StatelessWidget {
         });
   }
 
+  ///iOS
   Widget homeIOS(BuildContext context) => Theme(
         data: ThemeData(
           fontFamily: '.SF Pro Text',
@@ -306,6 +314,7 @@ class HomePage extends StatelessWidget {
         child: CupertinoPageScaffold(
           child: CustomScrollView(
             slivers: <Widget>[
+              ///导航栏
               CupertinoSliverNavigationBar(
                 border: Border(bottom: BorderSide.none),
                 backgroundColor: CupertinoColors.white,

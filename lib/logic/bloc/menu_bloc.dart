@@ -10,6 +10,7 @@ class MenuBloc {
   Stream<List<Menu>> get menuItems => menuController.stream;
 
   MenuBloc() {
+    ///添加数据源
     menuController.add(_menuVM.getMenuItems());
   }
 }

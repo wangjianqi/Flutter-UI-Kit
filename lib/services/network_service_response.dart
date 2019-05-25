@@ -1,4 +1,5 @@
 class NetworkServiceResponse<T> {
+  ///泛型
   T content;
   bool success;
   String message;

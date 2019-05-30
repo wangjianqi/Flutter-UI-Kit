@@ -27,6 +27,7 @@ class LoginPageState extends State<LoginPage> {
         ),
       );
 
+  ///弹出错误弹框
   showValidationError(LoginValidationType type) {
     scaffoldState.currentState.showSnackBar(SnackBar(
       content: Text(type == LoginValidationType.phone

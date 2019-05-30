@@ -27,7 +27,7 @@ class _LoginCardState extends State<LoginCard>
   Widget loginBuilder() => StreamBuilder<bool>(
         stream: loginBloc.otpResult,
         initialData: false,
-        builder: (context, snapshot) => Form(
+        builder: (context, snapshot) => Form(///表单
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: SingleChildScrollView(
@@ -35,6 +35,7 @@ class _LoginCardState extends State<LoginCard>
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
+                      ///输入框
                       new TextField(
                         onChanged: (phone) => phoneNumber = phone,
                         enabled: !snapshot.data,
@@ -50,6 +51,7 @@ class _LoginCardState extends State<LoginCard>
                       new SizedBox(
                         height: 10.0,
                       ),
+                      ///设置隐藏
                       snapshot.data == false
                           ? new Offstage()
                           : new TextField(
@@ -72,6 +74,7 @@ class _LoginCardState extends State<LoginCard>
                       Container(
                         child: snapshot.data == false
                             ? new GradientButton(
+                          ///登录按钮
                                 onPressed: () => phoneNumber?.length == 10
                                     ? loginBloc.otpSink.add(UserLoginViewModel(
                                         phonenumber: phoneNumber))
@@ -88,6 +91,7 @@ class _LoginCardState extends State<LoginCard>
                                 },
                                 text: Translations.of(context).text("login")),
                       ),
+                      ///重新获取
                       snapshot.data == true
                           ? new FlatButton(
                               child: Text(
@@ -137,6 +141,7 @@ class _LoginCardState extends State<LoginCard>
     super.dispose();
   }
 
+  ///错误
   showPhoneError(BuildContext context) {
     LoginProvider.of(context)
         .validationErrorCallback(LoginValidationType.phone);

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Menu {
   String title;
   IconData icon;
+  ///图片
   String image;
   List<String> items;
   BuildContext context;

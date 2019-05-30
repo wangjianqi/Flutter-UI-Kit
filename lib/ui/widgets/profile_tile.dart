@@ -14,6 +14,7 @@ class ProfileTile extends StatelessWidget {
         Text(
           title,
           style: TextStyle(
+            ///字体加粗
               fontSize: 20.0, fontWeight: FontWeight.w700, color: textColor),
         ),
         SizedBox(
@@ -22,6 +23,7 @@ class ProfileTile extends StatelessWidget {
         Text(
           subtitle,
           style: TextStyle(
+            ///正常粗体
               fontSize: 15.0, fontWeight: FontWeight.normal, color: textColor),
         ),
       ],

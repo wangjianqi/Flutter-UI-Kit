@@ -160,9 +160,12 @@ class HomePage extends StatelessWidget {
   void _showModalBottomSheet(BuildContext context, Menu menu) {
     showModalBottomSheet(
         context: context,
+        ///底部弹框
         builder: (context) => Material(
             clipBehavior: Clip.antiAlias,
+            ///设置背景色(不影响圆角)
             color: Colors.white,
+            ///切圆角
             shape: RoundedRectangleBorder(
                 borderRadius: new BorderRadius.only(
                     topLeft: new Radius.circular(15.0),
@@ -191,6 +194,7 @@ class HomePage extends StatelessWidget {
                         ),
                   ),
                 ),
+                ///自动带有弹框
                 MyAboutTile()
               ],
             )));
@@ -206,9 +210,12 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
+                  ///设置边框
                   border: Border.all(width: 3.0, color: Colors.white),
+                  ///设置背景图片
                   image: DecorationImage(
                       fit: BoxFit.cover,
+                      ///图片背景色
                       image: AssetImage(
                         menu.image,
                       ))),
@@ -233,7 +240,7 @@ class HomePage extends StatelessWidget {
                 child: Text(
                   "Go",
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: CupertinoColors.activeBlue),
+                  style: TextStyle(color: CupertinoColors.activeBlue),///iOS颜色
                 ),
                 color: Colors.white,
               ),
@@ -244,12 +251,15 @@ class HomePage extends StatelessWidget {
 
   Widget menuIOS(Menu menu, BuildContext context) {
     return Container(
+      ///设置高度
       height: deviceSize.height / 2,
+      ///设置圆角
       decoration: ShapeDecoration(
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       ),
       child: Card(
+        ///抗锯齿
         clipBehavior: Clip.antiAlias,
         elevation: 3.0,
         margin: EdgeInsets.all(16.0),
@@ -273,6 +283,7 @@ class HomePage extends StatelessWidget {
               bottom: 0.0,
               left: 0.0,
               right: 0.0,
+              ///设置高度
               height: 60.0,
               child: Container(
                 width: double.infinity,
@@ -286,7 +297,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget bodyDataIOS(List<Menu> data, BuildContext context) => SliverList(
+  Widget bodyDataIOS(List<Menu> data, BuildContext context) => SliverList(///滑动List
         delegate: SliverChildListDelegate(
             data.map((menu) => menuIOS(menu, context)).toList()),
       );
@@ -296,6 +307,7 @@ class HomePage extends StatelessWidget {
     return StreamBuilder<List<Menu>>(
       ///数据
         stream: menuBloc.menuItems,
+        ///空数据
         initialData: List(),
         builder: (context, snapshot) {
           return snapshot.hasData
@@ -310,13 +322,16 @@ class HomePage extends StatelessWidget {
   Widget homeIOS(BuildContext context) => Theme(
         data: ThemeData(
           fontFamily: '.SF Pro Text',
+          ///这个颜色影响底部弹框的圆角
         ).copyWith(canvasColor: Colors.transparent),
         child: CupertinoPageScaffold(
           child: CustomScrollView(
             slivers: <Widget>[
               ///导航栏
               CupertinoSliverNavigationBar(
+                ///设置边框
                 border: Border(bottom: BorderSide.none),
+                ///导航栏背景色
                 backgroundColor: CupertinoColors.white,
                 largeTitle: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

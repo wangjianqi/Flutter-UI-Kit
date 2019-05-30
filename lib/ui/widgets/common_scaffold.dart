@@ -90,6 +90,7 @@ class CommonScaffold extends StatelessWidget {
       appBar: AppBar(
         elevation: elevation,
         backgroundColor: Colors.black,
+        ///标题
         title: Text(appTitle),
         actions: <Widget>[
           SizedBox(
@@ -105,6 +106,7 @@ class CommonScaffold extends StatelessWidget {
           )
         ],
       ),
+      ///显示侧边导航栏
       drawer: showDrawer ? CommonDrawer() : null,
       body: bodyData,
       floatingActionButton: showFAB

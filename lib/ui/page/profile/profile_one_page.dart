@@ -80,6 +80,7 @@ class ProfileOnePage extends StatelessWidget {
       );
   //column4
   Widget accountColumn() => FittedBox(
+    ///填充
         fit: BoxFit.fill,
         child: Container(
           height: deviceSize.height * 0.3,
@@ -112,6 +113,7 @@ class ProfileOnePage extends StatelessWidget {
                 ),
               ),
               FittedBox(
+                ///适配方式
                 fit: BoxFit.cover,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -147,6 +149,7 @@ class ProfileOnePage extends StatelessWidget {
       child: Column(
         children: <Widget>[
           profileColumn(),
+          ///分割线
           CommonDivider(),
           followColumn(deviceSize),
           CommonDivider(),
@@ -158,6 +161,7 @@ class ProfileOnePage extends StatelessWidget {
     );
   }
 
+  ///自定义Scaffold
   Widget _scaffold() => CommonScaffold(
         appTitle: "View Profile",
         bodyData: bodyData(),
@@ -174,6 +178,7 @@ class ProfileOnePage extends StatelessWidget {
 }
 
 Widget followColumn(Size deviceSize) => Container(
+      ///设置高度
       height: deviceSize.height * 0.13,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

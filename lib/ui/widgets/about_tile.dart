@@ -4,6 +4,8 @@ import 'package:flutter_uikit/utils/uidata.dart';
 class MyAboutTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ///关于ListTile
+    ///showAboutDialog
     return AboutListTile(
       applicationIcon: FlutterLogo(
         colors: Colors.yellow,

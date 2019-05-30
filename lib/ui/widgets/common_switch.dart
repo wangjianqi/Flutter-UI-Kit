@@ -7,6 +7,7 @@ class CommonSwitch extends StatelessWidget {
   CommonSwitch({this.defValue = false});
   @override
   Widget build(BuildContext context) {
+    ///根据平台设置Switch
     return defaultTargetPlatform == TargetPlatform.android
         ? Switch(
             value: defValue,

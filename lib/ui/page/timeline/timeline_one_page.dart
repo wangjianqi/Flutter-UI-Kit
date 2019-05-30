@@ -46,6 +46,7 @@ class TimelineOnePage extends StatelessWidget {
   //column last
   Widget actionColumn(Post post) => FittedBox(
         fit: BoxFit.contain,
+        ///ButtonBar
         child: ButtonBar(
           alignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -80,6 +81,7 @@ class TimelineOnePage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
+              ///中间内容
               post.message,
               style: TextStyle(
                   fontWeight: FontWeight.normal,
@@ -89,12 +91,14 @@ class TimelineOnePage extends StatelessWidget {
           SizedBox(
             height: 10.0,
           ),
+          ///中间图片是否显示
           post.messageImage != null
               ? Image.network(
                   post.messageImage,
                   fit: BoxFit.cover,
                 )
               : Container(),
+          ///中间分割线是否显示
           post.messageImage != null ? Container() : CommonDivider(),
           actionColumn(post),
         ],
@@ -127,13 +131,16 @@ class TimelineOnePage extends StatelessWidget {
             ),
           )));
 
+  ///sliverAppBar
   Widget appBar() => SliverAppBar(
         backgroundColor: Colors.black,
         elevation: 2.0,
         title: Text("Feed"),
+        ///设置导航栏阴影
         forceElevated: true,
         pinned: true,
         floating: true,
+        ///要停留的部分
         bottom: bottomBar(),
       );
 
@@ -155,6 +162,7 @@ class TimelineOnePage extends StatelessWidget {
               ? CustomScrollView(
                   slivers: <Widget>[
                     appBar(),
+                    ///body
                     bodyList(snapshot.data),
                   ],
                 )

@@ -30,6 +30,7 @@ class SettingsOnePage extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       title: Text("Account"),
+                      ///角标
                       trailing: Icon(Icons.arrow_right),
                     ),
                     ListTile(

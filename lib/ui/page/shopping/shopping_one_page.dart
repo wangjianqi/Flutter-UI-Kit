@@ -19,6 +19,7 @@ class ShoppingOnePage extends StatelessWidget {
         left: 0.0,
         right: 0.0,
         child: Container(
+          ///设置透明度
           decoration: BoxDecoration(color: Colors.black.withOpacity(0.5)),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -52,6 +53,7 @@ class ShoppingOnePage extends StatelessWidget {
           padding: EdgeInsets.all(4.0),
           decoration: BoxDecoration(
               color: Colors.black.withOpacity(0.9),
+              ///设置圆角
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(10.0),
                   bottomRight: Radius.circular(10.0))),

@@ -17,6 +17,7 @@ class ProductDetailWidgets extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               new IconButton(
+                ///设置返回键
                 icon: new Icon(
                   defaultTargetPlatform == TargetPlatform.android
                       ? Icons.arrow_back
@@ -24,6 +25,7 @@ class ProductDetailWidgets extends StatelessWidget {
                   color: Colors.white,
                 ),
                 onPressed: () =>
+                ///判断是否可以返回
                     Navigator.canPop(context) ? Navigator.pop(context) : null,
               ),
               new Text(
@@ -54,6 +56,7 @@ class ProductDetailWidgets extends StatelessWidget {
         width: deviceSize.width / 2 - 30,
         child: new Material(
           clipBehavior: Clip.antiAlias,
+          ///体育场
           shape: new StadiumBorder(),
           shadowColor: Colors.black,
           elevation: 2.0,
@@ -102,6 +105,7 @@ class ProductDetailWidgets extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: <Widget>[
+        ///appBar
         appBarColumn(context),
         quantityCard(deviceSize, cartBloc),
       ],

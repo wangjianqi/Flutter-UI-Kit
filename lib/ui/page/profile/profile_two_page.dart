@@ -56,6 +56,7 @@ class ProfileTwoPage extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.w700, fontSize: 18.0),
                 ),
               ),
+              ///
               Expanded(
                 child: Card(
                   child: ListView.builder(
@@ -63,6 +64,7 @@ class ProfileTwoPage extends StatelessWidget {
                     itemCount: 5,
                     itemBuilder: (context, i) => Padding(
                           padding: const EdgeInsets.all(8.0),
+                          ///加载网络图片
                           child: Image.network(
                               "https://cdn.pixabay.com/photo/2016/10/31/18/14/ice-1786311_960_720.jpg"),
                         ),

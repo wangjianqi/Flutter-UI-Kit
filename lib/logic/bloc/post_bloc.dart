@@ -10,6 +10,7 @@ class PostBloc {
   final fabVisibleController = StreamController<bool>();
   Sink<bool> get fabSink => fabController.sink;
   Stream<List<Post>> get postItems => postController.stream;
+  ///是否显示悬浮按钮
   Stream<bool> get fabVisible => fabVisibleController.stream;
 
   PostBloc() {

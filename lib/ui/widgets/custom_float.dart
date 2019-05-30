@@ -11,6 +11,7 @@ class CustomFloat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ///悬浮按钮
     return FloatingActionButton(
       clipBehavior: Clip.antiAlias,
       mini: isMini,

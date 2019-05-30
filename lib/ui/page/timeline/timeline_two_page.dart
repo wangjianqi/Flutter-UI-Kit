@@ -71,6 +71,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
                     TextSpan(
                       text: "${post.personName}  ",
                     ),
+                    ///设置点
                     TextSpan(
                         text: "@${post.address} · ",
                         style: TextStyle(color: Colors.grey)),
@@ -83,6 +84,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
+                  ///中间内容
                   post.message,
                   style: TextStyle(
                       color: Colors.white,
@@ -93,6 +95,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
               SizedBox(
                 height: 10.0,
               ),
+              ///是否显示中间图片
               post.messageImage != null
                   ? Material(
                       borderRadius: BorderRadius.circular(8.0),
@@ -106,6 +109,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
               SizedBox(
                 height: 20.0,
               ),
+              ///底部按钮
               actionRow(post),
             ],
           ),
@@ -113,6 +117,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
       );
 
   Widget bodyList(List<Post> posts) => ListView.builder(
+    ///监听滑动
         controller: scrollController,
         itemCount: posts.length,
         itemBuilder: (context, i) {
@@ -145,6 +150,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
     scrollController = ScrollController();
     postBloc = PostBloc();
     scrollController.addListener(() {
+      ///滑动方向
       if (scrollController.position.userScrollDirection ==
           ScrollDirection.reverse) postBloc.fabSink.add(false);
       if (scrollController.position.userScrollDirection ==
@@ -162,6 +168,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      ///设置背景颜色
       backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
         centerTitle: false,
@@ -173,6 +180,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
         stream: postBloc.fabVisible,
         initialData: true,
         builder: (context, snapshot) => AnimatedOpacity(
+          ///透明度动画
               duration: Duration(milliseconds: 200),
               opacity: snapshot.data ? 1.0 : 0.0,
               child: FloatingActionButton(
@@ -190,6 +198,7 @@ class TimelineTwoPageState extends State<TimelineTwoPage> {
 }
 
 class FloatingPainter extends CustomPainter {
+  ///绘制十
   @override
   void paint(Canvas canvas, Size size) {
     Paint amberPaint = Paint()

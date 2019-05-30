@@ -6,6 +6,7 @@ import 'package:rxdart/rxdart.dart';
 class LoginBloc {
   final otpController = StreamController<UserLoginViewModel>();
   final loginController = StreamController<UserLoginViewModel>();
+  ///行为
   final apiController = BehaviorSubject<FetchProcess>();
   final otpResendController = StreamController<bool>();
   final otpResultController = BehaviorSubject<bool>();
@@ -13,6 +14,7 @@ class LoginBloc {
   Sink<UserLoginViewModel> get loginSink => otpController.sink;
   Sink<bool> get resendOtpSink => otpResendController.sink;
   Stream<bool> get otpResult => otpResultController.stream;
+  ///登录结果
   Stream<FetchProcess> get apiResult => apiController.stream;
 
   LoginBloc() {
@@ -24,6 +26,7 @@ class LoginBloc {
   void apiCall(UserLoginViewModel userLogin) async {
     FetchProcess process = new FetchProcess(loading: true);
     //for progress loading
+    ///开始进度中
     apiController.add(process);
     if (userLogin.otp == null) {
       process.type = ApiType.performOTP;

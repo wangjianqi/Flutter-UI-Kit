@@ -124,9 +124,11 @@ class _LoginCardState extends State<LoginCard>
     // TODO: implement initState
     super.initState();
     loginBloc = new LoginBloc();
+    ///接口流(登录加载，登录成功)
     apiStreamSubscription = apiSubscription(loginBloc.apiResult, context);
     controller = new AnimationController(
         vsync: this, duration: new Duration(milliseconds: 1500));
+    ///动画值
     animation = new Tween(begin: 0.0, end: 1.0).animate(
         new CurvedAnimation(parent: controller, curve: Curves.fastOutSlowIn));
     animation.addListener(() => this.setState(() {}));

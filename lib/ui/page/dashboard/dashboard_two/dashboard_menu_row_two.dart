@@ -28,7 +28,9 @@ class DashboardMenuRowTwo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          ///固定大小
           SizedBox.fromSize(
+            ///设置size
             size: Size.square(deviceSize.width / 3.3),
             child: Card(
               color: Colors.grey.shade300,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_uikit/services/network_service_response.dart';
 import 'package:flutter_uikit/utils/uidata.dart';
 
+///结果
 fetchApiResult(BuildContext context, NetworkServiceResponse snapshot) {
   showDialog(
     context: context,
@@ -18,6 +19,7 @@ fetchApiResult(BuildContext context, NetworkServiceResponse snapshot) {
   );
 }
 
+///成功提示
 showSuccess(BuildContext context, String message, IconData icon) {
   showDialog(
       context: context,
@@ -50,7 +52,7 @@ showSuccess(BuildContext context, String message, IconData icon) {
             ),
           ));
 }
-
+///进度条
 showProgress(BuildContext context) {
   showDialog(
       context: context,

@@ -8,8 +8,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class CreditCardPage extends StatelessWidget {
   BuildContext _context;
   CreditCardBloc cardBloc;
+  ///卡号（插件）
   MaskedTextController ccMask =
       MaskedTextController(mask: "0000 0000 0000 0000");
+  ///日期
   MaskedTextController expMask = MaskedTextController(mask: "00/00");
   Widget bodyData() => SingleChildScrollView(
         child: Column(
@@ -34,6 +36,7 @@ class CreditCardPage extends StatelessWidget {
                 decoration: BoxDecoration(
                     gradient: LinearGradient(colors: UIData.kitGradients)),
               ),
+              ///设置透明度
               Opacity(
                 opacity: 0.1,
                 child: Image.asset(
@@ -191,10 +194,12 @@ class CreditCardPage extends StatelessWidget {
         ),
       );
 
+  ///底部按钮
   Widget floatingBar() => Ink(
         decoration: ShapeDecoration(
             shape: StadiumBorder(),
             gradient: LinearGradient(colors: UIData.kitGradients)),
+        ///extended
         child: FloatingActionButton.extended(
           onPressed: () {},
           backgroundColor: Colors.transparent,

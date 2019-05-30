@@ -27,6 +27,7 @@ class UserLoginViewModel {
     this.apiResult = result;
   }
 
+  ///登录结果
   Future<Null> performLogin(UserLoginViewModel userLogin) async {
     NetworkServiceResponse<OTPResponse> result =
         await otpRepo.fetchOTPLoginResponse(

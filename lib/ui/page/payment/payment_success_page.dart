@@ -57,6 +57,7 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
                     SizedBox(
                       height: 10.0,
                     ),
+                    ///悬浮按钮
                     FloatingActionButton(
                       backgroundColor: Colors.black,
                       child: Icon(
@@ -112,6 +113,7 @@ class PaymentSuccessPageState extends State<PaymentSuccessPage> {
                 Card(
                   clipBehavior: Clip.antiAlias,
                   elevation: 0.0,
+                  ///设置背景色
                   color: Colors.grey.shade300,
                   child: ListTile(
                     leading: Icon(

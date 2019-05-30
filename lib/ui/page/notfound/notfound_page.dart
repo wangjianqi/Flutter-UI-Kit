@@ -10,6 +10,7 @@ class NotFoundPage extends StatelessWidget {
   final String image;
   final iconColor;
 
+  ///未实现页面
   NotFoundPage(
       {this.appTitle = "Search",
       this.title = "No Result",

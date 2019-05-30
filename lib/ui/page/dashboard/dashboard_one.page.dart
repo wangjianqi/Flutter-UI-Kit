@@ -181,6 +181,7 @@ class DashboardOnePage extends StatelessWidget {
   Widget allCards(BuildContext context) => SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            ///appBar
             appBarColumn(context),
             SizedBox(
               height: deviceSize.height * 0.01,

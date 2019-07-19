@@ -7,6 +7,7 @@ enum Flavor { MOCK, PRO }
 
 //Simple DI
 class Injector {
+  ///单例
   static final Injector _singleton = new Injector._internal();
   static Flavor _flavor;
 
@@ -18,11 +19,14 @@ class Injector {
 
   Injector._internal();
 
+  ///模拟还是正式
   IOTPService get otpService {
     switch (_flavor) {
+      ///模拟数据
       case Flavor.MOCK:
         return MockOTPService();
       default:
+        ///正式的
         return OTPService(new RestClient());
     }
   }

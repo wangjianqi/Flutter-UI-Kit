@@ -9,7 +9,7 @@ class LoginBackground extends StatelessWidget {
 
   Widget topHalf(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
-    ///flexible
+    ///flexible：充满屏幕
     return new Flexible(
       flex: 2,
       child: ClipPath(

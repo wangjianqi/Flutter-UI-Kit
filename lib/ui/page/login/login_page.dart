@@ -14,7 +14,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginPageState extends State<LoginPage> {
+  ///脚手架key
   final scaffoldState = GlobalKey<ScaffoldState>();
+
+
   Widget loginScaffold() => LoginProvider(
         validationErrorCallback: showValidationError,
         child: Scaffold(

@@ -1,3 +1,6 @@
+
+
+///网络返回
 class NetworkServiceResponse<T> {
   ///泛型
   T content;
@@ -7,7 +10,9 @@ class NetworkServiceResponse<T> {
   NetworkServiceResponse({this.content, this.success, this.message});
 }
 
+///map
 class MappedNetworkServiceResponse<T> {
+  ///动态类型：api返回的数据
   dynamic mappedResult;
   NetworkServiceResponse<T> networkServiceResponse;
   MappedNetworkServiceResponse(

@@ -16,8 +16,10 @@ class OTPService extends NetworkService implements IOTPService {
   @override
   Future<NetworkServiceResponse<CreateOTPResponse>> createOTP(
       String phoneNumber) async {
+    ///replaceFirst
     var result = await rest.getAsync<CreateOTPResponse>(
         Uri.parse(_kCreateOtpUrl.replaceFirst("{1}", phoneNumber)).toString());
+    ///有数据
     if (result.mappedResult != null) {
       var res = CreateOTPResponse.fromJson(result.mappedResult);
       return new NetworkServiceResponse(
@@ -25,6 +27,7 @@ class OTPService extends NetworkService implements IOTPService {
         success: result.networkServiceResponse.success,
       );
     }
+    ///没有数据
     return new NetworkServiceResponse(
         success: result.networkServiceResponse.success,
         message: result.networkServiceResponse.message);

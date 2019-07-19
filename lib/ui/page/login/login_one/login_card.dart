@@ -17,6 +17,7 @@ class LoginCard extends StatefulWidget {
 
 class _LoginCardState extends State<LoginCard>
     with SingleTickerProviderStateMixin {
+
   var deviceSize;
   AnimationController controller;
   Animation<double> animation;
@@ -24,9 +25,13 @@ class _LoginCardState extends State<LoginCard>
   String phoneNumber, otp;
   StreamSubscription<FetchProcess> apiStreamSubscription;
 
+  ///StreamBuilder：是bool类型
   Widget loginBuilder() => StreamBuilder<bool>(
+        ///传入Stream
         stream: loginBloc.otpResult,
+        ///初始值
         initialData: false,
+        ///
         builder: (context, snapshot) => Form(///表单
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
@@ -109,6 +114,7 @@ class _LoginCardState extends State<LoginCard>
 
   Widget loginCard() {
     return Opacity(
+      ///使用动画
       opacity: animation.value,
       child: SizedBox(
         height: deviceSize.height / 2 - 20,
@@ -121,10 +127,10 @@ class _LoginCardState extends State<LoginCard>
 
   @override
   initState() {
-    // TODO: implement initState
     super.initState();
+    ///登录
     loginBloc = new LoginBloc();
-    ///接口流(登录加载，登录成功)
+    ///接口流订阅(登录加载，登录成功)
     apiStreamSubscription = apiSubscription(loginBloc.apiResult, context);
     controller = new AnimationController(
         vsync: this, duration: new Duration(milliseconds: 1500));
@@ -139,12 +145,14 @@ class _LoginCardState extends State<LoginCard>
   void dispose() {
     controller?.dispose();
     loginBloc?.dispose();
+    ///取消
     apiStreamSubscription?.cancel();
     super.dispose();
   }
 
   ///错误
   showPhoneError(BuildContext context) {
+    ///执行回调
     LoginProvider.of(context)
         .validationErrorCallback(LoginValidationType.phone);
   }

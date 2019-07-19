@@ -27,6 +27,7 @@ class UIData {
 
   //fonts
   static const String quickFont = "Quicksand";
+  ///字体库
   static const String ralewayFont = "Raleway";
   static const String quickBoldFont = "Quicksand_Bold.otf";
   static const String quickNormalFont = "Quicksand_Book.otf";
@@ -61,6 +62,7 @@ class UIData {
   static const String success = "Success";
   static const String ok = "OK";
   static const String forgot_password = "Forgot Password?";
+  ///错误信息
   static const String something_went_wrong = "Something went wrong";
   static const String coming_soon = "Coming Soon";
 

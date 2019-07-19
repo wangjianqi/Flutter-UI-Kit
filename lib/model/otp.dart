@@ -9,7 +9,9 @@ class CreateOTPResponse {
 }
 
 class OTPResponse {
+  ///状态
   String status;
+  ///model数据
   OTPData data;
   OTPResponse({this.status, this.data});
 
@@ -18,6 +20,7 @@ class OTPResponse {
         data = OTPData.fromJson(json['data']);
 }
 
+///
 class OTPData {
   final String authToken;
   final String userId;

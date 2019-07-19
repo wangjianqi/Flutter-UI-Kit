@@ -9,8 +9,10 @@ import 'package:meta/meta.dart';
 
 class UserLoginViewModel {
   String phonenumber;
+  ///
   String otp;
   bool otpResult = false;
+  ///接口返回值
   NetworkServiceResponse apiResult;
   IOTPService otpRepo = new Injector().otpService;
 
@@ -20,9 +22,11 @@ class UserLoginViewModel {
   //for login
   UserLoginViewModel.withOTP({@required this.phonenumber, @required this.otp});
 
+  ///无需返回值
   Future<Null> getOtp(String phoneNumber) async {
     NetworkServiceResponse<CreateOTPResponse> result =
         await otpRepo.createOTP(phoneNumber);
+    ///返回结果
     this.otpResult = result.success;
     this.apiResult = result;
   }

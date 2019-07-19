@@ -4,6 +4,7 @@ import 'package:flutter_uikit/myapp.dart';
 
 void main() {
   // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  Injector.configure(Flavor.MOCK);
+  ///模拟数据
+  Injector.configure(Flavor.PRO);
   runApp(MyApp());
 }
